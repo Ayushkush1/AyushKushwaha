@@ -10,7 +10,7 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gray-50">
       <HomeBanner />
       <SkillsSection />
       <ProjectSection />

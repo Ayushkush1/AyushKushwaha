@@ -1,108 +1,102 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { Pagination } from 'swiper/modules';
+
+const projects = [
+  {
+    title: 'Portfolio Website',
+    description: 'A personal portfolio built using Next.js and Tailwind CSS, showcasing my skills and projects.',
+    image: '/assets/portfolio.png',
+    link: 'https://ayushkushwaha.vercel.app/',
+  },
+  {
+    title: 'MOVIX',
+    description: 'A movie search app using Redux.js, React.js, and SASS with dynamic features.',
+    image: '/assets/movix.png',
+    link: 'https://ayushmovix.vercel.app/',
+  },
+  {
+    title: 'RemoveQ',
+    description: 'An innovative image optimization service enhancing website performance.',
+    image: '/assets/removeq.png',
+    link: 'https://removeq.com/',
+  },
+];
 
 export default function ProjectSlider() {
   const swiperRef = useRef(null);
 
-  const handleSlideChange = (swiper) => {
-    // Reset all slides
-    swiper.slides.forEach((slide) => {
-      slide.classList.remove('scale-105', 'z-10', 'opacity-80');
-    });
-
-    // Add classes to active and neighboring slides
-    const activeIndex = swiper.activeIndex;
-    const prevIndex = activeIndex - 1;
-    const nextIndex = activeIndex + 1;
-
-    swiper.slides[activeIndex]?.classList.add('scale-105', 'z-10');
-    swiper.slides[prevIndex]?.classList.add('opacity-80');
-    swiper.slides[nextIndex]?.classList.add('opacity-80');
-  };
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.pagination.init();
+      swiperRef.current.swiper.pagination.update();
+    }
+  }, []);
 
   return (
     <section className="py-16 relative top-[180px]">
       {/* Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-light text-gray-800">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-4xl font-light text-gray-800">
           Crafting Digital Excellence
         </h2>
-        <p className="text-lg text-gray-500 mt-2">From concept to code</p>
-      </div>
+        <p className="text-lg text-gray-400 mt-2">From concept to code</p>
+      </motion.div>
 
       {/* Swiper Slider */}
       <Swiper
         ref={swiperRef}
         modules={[Pagination]}
-        spaceBetween={30}
-        slidesPerView={3}
+        spaceBetween={50}
+        slidesPerView={1.2}
         centeredSlides={true}
         pagination={{
           clickable: true,
-          renderBullet: (index, className) =>
-            `<span class="${className} ${
-              index === 1 ? 'w-5 h-5 bg-gray-800' : 'w-3 h-3'
-            }"></span>`,
+          el: '.custom-pagination',
         }}
-        onSlideChange={handleSlideChange}
-        onSwiper={(swiper) => handleSlideChange(swiper)}
-        className="max-w-5xl mx-auto"
+        className="max-w-6xl mx-auto"
       >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div className="bg-gradient-to-r from-pink-500 to-yellow-500 rounded-lg p-10 text-center shadow-lg transform">
-            <div className="mb-6">
+        {projects.map((project, index) => (
+          <SwiperSlide key={index}>
+            <div className="group relative h-[27rem] overflow-hidden rounded-lg drop-shadow-lg">
+              {/* Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gray-900 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-500"></div>
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
+                <p className="text-lg mb-6">{project.description}</p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-orange-500 rounded-lg font-bold hover:bg-orange-600 transition"
+                >
+                  View Project
+                </a>
+              </div>
             </div>
-            <h3 className="text-4xl font-semibold text-white">01</h3>
-            <p className="text-white text-sm mt-2">PROJECT</p>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div className="bg-amber-100 rounded-lg p-10 text-center shadow-lg transform">
-            <div className="mb-6">
-            </div>
-            <h3 className="text-4xl font-semibold text-gray-800">02</h3>
-            <p className="text-gray-500 text-sm mt-2">PROJECT</p>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 3 */}
-        <SwiperSlide>
-          <div className="bg-amber-100 rounded-lg p-10 text-center shadow-lg transform">
-            <div className="mb-6">
-            </div>
-            <h3 className="text-4xl font-semibold text-gray-800">03</h3>
-            <p className="text-gray-500 text-sm mt-2">PROJECT</p>
-          </div>
-        </SwiperSlide>
-        
-        {/* Slide 4 */} 
-        <SwiperSlide>
-          <div className="bg-amber-100 rounded-lg p-10 text-center shadow-lg transform">
-            <div className="mb-6">
-            </div>
-            <h3 className="text-4xl font-semibold text-gray-800">04</h3>
-            <p className="text-gray-500 text-sm mt-2">PROJECT</p>
-          </div>
-        </SwiperSlide>
-        
-        {/* Slide 5 */}
-        <SwiperSlide>
-          <div className="bg-amber-100 rounded-lg p-10 text-center shadow-lg transform">
-            <div className="mb-6">
-            </div>
-            <h3 className="text-4xl font-semibold text-gray-800">05</h3>
-            <p className="text-gray-500 text-sm mt-2">PROJECT</p>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
+
+      {/* Custom Pagination */}
+      <div className="custom-pagination items-center justify-center mt-8"></div>
     </section>
   );
 }

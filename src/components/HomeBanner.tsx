@@ -3,7 +3,7 @@ import React from 'react';
 const HomeBanner = () => {
     return (
         <div className="relative">
-            <div className="flex flex-col items-center text-8xl bg-clip-text text-transparent bg-gradient-to-r from-[#FF8A00] to-[#f5de12] font-black tracking-wider px-12 py-8 relative">
+            <div className="flex flex-col items-center text-8xl bg-clip-text text-transparent bg-gradient-to-r from-[#ff6f00] to-[#ffe601] font-black lg:text-9xl px-12 py-2 relative">
                 <h1>AYUSH</h1>
                 <h1>KUSHWAHA</h1>
             </div>

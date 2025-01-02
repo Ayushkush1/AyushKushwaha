@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-8 py-4 cursor-pointer relative bg-gray-100">
+    <div className="flex justify-between items-center px-8 py-4 cursor-pointer relative bg-gray-50">
       {/* Logo */}
       <Link href="/" className="h-12 w-15">
         <img src="/assets/logoak.png" alt="logo" className="w-full h-full" />
