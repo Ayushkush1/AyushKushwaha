@@ -67,7 +67,7 @@ export default function ContactPage() {
         transition={{ duration: 1 }}
       >
         <h2 className="text-4xl text-center font-light text-gray-800 mb-10">Contact Details</h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 ">
+        <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 ">
           {/* Email Card */}
           <div className="flex items-center bg-white shadow-md rounded-lg p-6 gap-4">
             <i className="fas fa-envelope text-blue-500 text-3xl"></i>
