@@ -72,19 +72,6 @@ export default function AboutSection() {
               </span>
             </a>
 
-            {/* Instagram Artistic */}
-            <a
-              href="https://instagram.com/_artistic_ayush"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              <i className="fab fa-instagram text-2xl text-pink-600"></i>
-              <span className="text-blue-500 hover:text-blue-700">
-                @_artistic_ayush
-              </span>
-            </a>
-
             {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/ayush-kushwaha-b3b76915b/"
