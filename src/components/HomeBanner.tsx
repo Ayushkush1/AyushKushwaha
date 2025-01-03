@@ -49,10 +49,10 @@ export default function HomeBanner() {
                         className="h-72 md:h-80 lg:h-80 object-contain animate-float"
                     />
                 </a>
-                <div className="absolute md:h-32 lg:h-32 md:w-20 lg:w-28 h-20 w-14 -rotate-12 top-[130%] left-[77%] sm:top-[120%] lg:top-[95%] md:left-[63%] sm:left-[65%] lg:left-[58%]">
+                <div className="absolute md:h-32 lg:h-32 md:w-20 lg:w-28 h-20 w-14 -rotate-12 top-[130%] left-[77%]  lg:top-[95%] md:left-[63%] md:top-[120%] lg:left-[58%]">
                     <img src="/assets/arrow.png" alt="" />
                 </div>
-                <div className="absolute font-serif top-[177%] left-[85%] sm:top-[174%] lg:top-[142%] sm:left-[73%] md:top-[154%] md:left-[70%] lg:left-[64%]">
+                <div className="absolute font-serif top-[177%] left-[85%]  lg:top-[142%]  md:top-[154%] md:left-[70%] lg:left-[64%]">
                     <motion.div
                         initial={{ y: 0 }}
                         animate={{ y: [-5, 0, -5] }} // Moves up and down smoothly
