@@ -35,7 +35,7 @@ export default function HomeBanner() {
     }, []);
 
     return (
-        <div className="relative lg:h-[80vh] h-[65vh] bg-gray-50">
+        <div className="relative lg:h-[80vh] md:h-[55vh] h-[65vh] bg-gray-50">
             {/* Hero Content */}
             <div className="relative z-10">
                 <div className="flex flex-col about_blank items-center text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#ff6f00] to-[#ffe601] font-black lg:text-9xl sm:text-7xl md:text-9xl px-12 py-2 relative">
@@ -49,7 +49,7 @@ export default function HomeBanner() {
                         className="h-72 md:h-80 lg:h-80 object-contain animate-float"
                     />
                 </a>
-                <div className="absolute sm:h-32 lg:h-32 sm:w-20 lg:w-28 h-20 w-14 -rotate-12 top-[130%] left-[77%] sm:top-[120%] lg:top-[95%] sm:left-[65%] lg:left-[58%]">
+                <div className="absolute md:h-32 lg:h-32 md:w-20 lg:w-28 h-20 w-14 -rotate-12 top-[130%] left-[77%] sm:top-[120%] lg:top-[95%] sm:left-[65%] lg:left-[58%]">
                     <img src="/assets/arrow.png" alt="" />
                 </div>
                 <div className="absolute font-serif top-[177%] left-[85%] sm:top-[174%] lg:top-[142%] sm:left-[73%] lg:left-[64%]">
