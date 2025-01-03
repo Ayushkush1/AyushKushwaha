@@ -32,7 +32,7 @@ export default function AboutSection() {
           <motion.img
             src="/assets/Profile-removebg.png"
             alt="Profile"
-            className="w-64 h-64 rounded-full bg-orange-100 object-cover"
+            className="w-64 h-64 rounded-full bg-white-100 object-cover"
           />
         </motion.div>
 

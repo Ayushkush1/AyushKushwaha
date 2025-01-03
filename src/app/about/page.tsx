@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-7xl mx-auto">
           {/* Image */}
           <motion.div
-            className="w-80 h-80 rounded-full overflow-hidden bg-white shadow-lg"
+            className="w-80 h-80 rounded-full overflow-hidden bg-white-100 shadow-lg"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
