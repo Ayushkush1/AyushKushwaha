@@ -21,6 +21,25 @@ const projects = [
     image: 'assets/removeq.png',
     link: 'https://removeq.com/',
   },
+  {
+    title: 'Blog Website',
+    description: 'A responsive blog website built using HTML, CSS, and JavaScript with dynamic features.',
+    image: 'assets/blooger.png',
+    link: 'https://ayushkush1.github.io/Blooger/',
+  },
+  {
+    title: '*** ***',
+    description: '* ******** *** built using React.js, Tailwind CSS, and ************* API.',
+    image: 'assets/coming-soon.png',
+    link: '',
+  },
+  {
+    title: '*-******* *******',
+    description: '** *-******* ***** ***** ***** ****.**, *****.**, **** ******* **** ******* *********.',
+    image: 'assets/coming-soon.png',
+    link: '',
+  },
+  
 ];
 
 const skills = [
@@ -45,17 +64,20 @@ const itemVariants = {
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-    
+    <div className="min-h-screen mx-24 bg-gray-50">
+
 
       {/* Projects Section */}
       <motion.section
-        className="py-5 px-16 bg-gray-50"
+        className="py-5 bg-gray-50"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">My Projects</h2>
+        <h2 className="text-4xl text-center font-light text-gray-800">
+          Crafting Digital Excellence
+        </h2>
+        <p className="text-lg text-center text-gray-400 mt-2 mb-12">From concept to code</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -88,13 +110,16 @@ export default function PortfolioPage() {
 
       {/* Skills Section */}
       <motion.section
-        className="py-16 px-8"
+        className="py-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
       >
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Skills I Use</h2>
+        <h2 className="text-4xl text-center font-light text-gray-800">
+          The Skills That Power My Code
+        </h2>
+        <p className="text-lg text-center text-gray-400 mt-2 mb-12">A collection of the tools and technologies I use to bring ideas to life</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <motion.div
@@ -110,7 +135,7 @@ export default function PortfolioPage() {
         </div>
       </motion.section>
 
-     
+
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function ProjectSlider() {
   }, []);
 
   return (
-    <section className="py-16 relative top-[180px]">
+    <section className="py-16 relative">
       {/* Header */}
       <motion.div
         className="text-center mb-12"

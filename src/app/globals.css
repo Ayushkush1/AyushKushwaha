@@ -1,3 +1,6 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -77,3 +80,4 @@ body , html {
       transform: translateY(-10px);
   }
 }
+

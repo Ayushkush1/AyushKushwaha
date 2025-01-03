@@ -24,7 +24,7 @@ const SkillsSection = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-16 relative top-[240px]">
+        <section ref={sectionRef} className="py-16 relative">
             {/* Header */}
             <motion.div
                 className="text-center mb-12"

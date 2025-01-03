@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function ContactSection() {
   return (
-    <section className="py-16 relative top-[100px]">
+    <section className="py-16 relative">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-light text-gray-800">Let’s Connect</h2>
@@ -77,7 +77,7 @@ export default function ContactSection() {
           <h3 className="text-lg font-semibold mb-6">Get in Touch</h3>
           <ul className="space-y-6">
             <li className="flex items-center space-x-4">
-              <span>📧</span>
+              <i className="fas fa-envelope text-yellow-400 text-xl"></i>
               <a
                 href="mailto:ayushkushwaha381@gmail.com"
                 className="hover:underline"
@@ -86,13 +86,13 @@ export default function ContactSection() {
               </a>
             </li>
             <li className="flex items-center space-x-4">
-              <span>📱</span>
+              <i className="fas fa-phone text-green-400 text-xl"></i>
               <a href="tel:+918738954475" className="hover:underline">
                 +91 8738954475
               </a>
             </li>
             <li className="flex items-center space-x-4">
-              <span>🔗</span>
+              <i className="fab fa-linkedin text-blue-500 text-xl"></i>
               <a
                 href="https://www.linkedin.com/in/ayush-kushwaha-b3b76915b/"
                 target="_blank"
@@ -103,7 +103,7 @@ export default function ContactSection() {
               </a>
             </li>
             <li className="flex items-center space-x-4">
-              <span>🐙</span>
+              <i className="fab fa-github text-gray-400 text-xl"></i>
               <a
                 href="https://github.com/Ayushkush1"
                 target="_blank"

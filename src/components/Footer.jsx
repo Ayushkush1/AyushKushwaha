@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="bg-black py-4 mt-auto relative top-[100px]">
+      <footer className="bg-black py-4 mt-auto relative">
         <div className="text-center text-white text-sm">
           © 2024 Ayush Kushwaha. All rights reserved. 
           <span className="ml-4">

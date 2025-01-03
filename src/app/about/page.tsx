@@ -13,7 +13,10 @@ export default function AboutPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Who I Am</h2>
+        <h2 className="text-4xl text-center font-light text-gray-800">Who I Am</h2>
+        <p className="text-lg text-center text-gray-400 mt-2 mb-10">
+          A passionate developer turning ideas into impactful digital experiences
+        </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-7xl mx-auto">
           {/* Image */}
           <motion.div
@@ -56,7 +59,10 @@ export default function AboutPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Skills & Expertise</h2>
+        <h2 className="text-4xl text-center font-light text-gray-800">
+          The Skills That Power My Code
+        </h2>
+        <p className="text-lg text-center text-gray-400 mt-2 mb-12">A collection of the tools and technologies I use to bring ideas to life</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {[
             { name: 'React.js', color: 'bg-blue-500' },
@@ -84,14 +90,61 @@ export default function AboutPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">My Interests</h2>
-        <p className="text-lg text-gray-700 max-w-4xl mx-auto text-center">
-          Beyond coding, I enjoy sketching, capturing nature through photography, and exploring creative ideas. Check out my personal work:
+        <h2 className="text-4xl text-center font-light text-gray-800">
+          Exploring Beyond Code
+        </h2>
+        <p className="text-lg text-center text-gray-400 mt-2 mb-12">
+          Passions that inspire creativity and fuel my imagination
         </p>
-        <div className="flex justify-center gap-4 mt-4">
-          <a href="https://instagram.com/awsm_ayush_" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Instagram (Personal)</a>
-          <a href="https://instagram.com/_artistic_ayush" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Instagram (Artistic)</a>
+        <p className="text-lg text-gray-700 max-w-4xl mx-auto text-center">
+          Beyond coding, I enjoy sketching, capturing nature through photography, cooking delightful meals, and exploring creative ideas. Check out my personal and professional profiles:
+        </p>
+        <div className="flex justify-center gap-8 mt-6 items-center flex-wrap">
+          {/* Instagram Personal */}
+          <a
+            href="https://instagram.com/awsm_ayush_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-lg"
+          >
+            <i className="fab fa-instagram text-3xl text-pink-600"></i>
+            <span className="text-blue-500 hover:text-blue-700">@awsm_ayush_</span>
+          </a>
+
+          {/* Instagram Artistic */}
+          <a
+            href="https://instagram.com/_artistic_ayush"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-lg"
+          >
+            <i className="fab fa-instagram text-3xl text-pink-600"></i>
+            <span className="text-blue-500 hover:text-blue-700">@_artistic_ayush</span>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/ayush-kushwaha-b3b76915b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-lg"
+          >
+            <i className="fab fa-linkedin text-3xl text-blue-600"></i>
+            <span className="text-blue-500 hover:text-blue-700">Ayush Kushwaha</span>
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/Ayushkush1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-lg"
+          >
+            <i className="fab fa-github text-3xl text-gray-800"></i>
+            <span className="text-blue-500 hover:text-blue-700">@Ayushkush1</span>
+          </a>
         </div>
+
       </motion.section>
 
 
