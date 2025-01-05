@@ -35,7 +35,16 @@ export default function HomeBanner() {
     }, []);
 
     return (
-        <div className="relative lg:h-[80vh] md:h-[55vh] h-[55vh] bg-gray-50">
+        <motion.div 
+        
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+            duration: 1.5,
+            ease: 'easeOut',
+        }}
+        
+        className="relative lg:h-[80vh] md:h-[55vh] h-[55vh] bg-gray-50">
             {/* Hero Content */}
             <div className="relative z-10">
                 <div className="flex flex-col about_blank items-center text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#ff6f00] to-[#ffe601] font-black lg:text-9xl sm:text-7xl md:text-9xl px-12 py-2 relative">
@@ -104,6 +113,6 @@ export default function HomeBanner() {
                     />
                 </motion.div>
             ))}
-        </div>
+        </motion.div>
     );
 }
