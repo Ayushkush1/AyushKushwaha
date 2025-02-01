@@ -24,6 +24,10 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        
+  <!-- SmartCode script -->
+    <script src="https://tigsaw.com/api/delivery/N71ZW3EN/common"></script>
+  <!-- End SmartCode script -->
       </body>
     </html>
   );
