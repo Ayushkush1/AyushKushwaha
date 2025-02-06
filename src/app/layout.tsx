@@ -26,6 +26,8 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Footer />
+        
+      <script src="https://tigsaw.com/api/delivery/N71ZW3EN/common"></script>
       </body>
     </html>
   );
