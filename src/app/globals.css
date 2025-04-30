@@ -1,9 +1,18 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 
 
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+
+@import 'swiper/css';
+@import 'swiper/css/pagination';
 
 :root {
   --background: #ffffff;
@@ -73,11 +82,27 @@ body , html {
 }
 
 @keyframes float {
-  0%, 100% {
-      transform: translateY(0);
+  0% {
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-      transform: translateY(-10px);
+    transform: translateY(-100px) rotate(180deg);
   }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50px) rotate(5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 15s ease-in-out infinite;
 }
 

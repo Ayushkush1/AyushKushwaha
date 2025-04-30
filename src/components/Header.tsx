@@ -11,7 +11,9 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-8 py-4 cursor-pointer relative">
+    // Remove background gradient classes: bg-gradient-to-b from-white/70 via-orange-50/30 to-transparent
+    // Keep backdrop-blur-[0px] or remove it if no blur is needed at all.
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-4 cursor-pointer backdrop-blur-[0px]">
       {/* Logo */}
       <Link href="/" className="h-12 w-15">
         <img src="/assets/logoak.png" alt="logo" className="w-full h-full" />
@@ -38,7 +40,7 @@ const Header = () => {
           &times;
         </div>
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center space-y-6 text-white text-4xl font-bold">
+        <nav className="flex flex-col items-center space-y-6 text-white md:text-7xl text-5xl font-bold">
           <Link
             href="/portfolio"
             className="hover:text-orange-400 transition"
@@ -54,12 +56,19 @@ const Header = () => {
             About
           </Link>
           <Link
+            href="/services"
+            className="hover:text-orange-400 transition"
+            onClick={handleMenuToggle}
+          >
+            Services
+          </Link>
+          {/* <Link
             href="/contact"
             className="hover:text-orange-400 transition"
             onClick={handleMenuToggle}
           >
             Contact
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </div>
