@@ -3,10 +3,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: 50, label: "Projects Completed" },
-  { value: 30, label: "Happy Clients" },
-  { value: 5, label: "Years Experience" },
-  { value: 100, label: "Cups of Coffee" }
+  { value: 20, label: "Projects Completed" },
+  { value: 10, label: "Happy Clients" },
+  { value: 2, label: "Years Experience" },
+  { value: 1000, label: "Cups of Coffee" }
 ];
 
 export default function StatsSection() {
