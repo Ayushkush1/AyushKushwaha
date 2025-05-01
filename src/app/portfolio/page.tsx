@@ -21,6 +21,12 @@ const projects: Project[] = [
     link: "https://ayushkushwaha.vercel.app/",
   },
   {
+    title: 'NinzaHost',
+    description: 'NinzaHost offers affordable web hosting with cPanel, free SSL, and 24/7 support.',
+    image: '/assets/ninzahost.png', 
+    link: 'https://www.ninzahost.com/',
+  },
+  {
     title: "MOVIX",
     description: "A movie search app using Redux.js, React.js, and SASS with dynamic features.",
     image: "/assets/movix.png",
