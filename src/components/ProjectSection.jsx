@@ -4,11 +4,12 @@ import { useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 
 const projects = [
+
   {
-    title: 'MOVIX',
-    description: 'A movie search app using Redux.js, React.js, and SASS with dynamic features.',
-    image: '/assets/movix.png',
-    link: 'https://ayushmovix.vercel.app/',
+    title: 'NinzaHost',
+    description: 'NinzaHost offers affordable web hosting with cPanel, free SSL, and 24/7 support.',
+    image: '/assets/ninzahost.png', 
+    link: 'https://www.ninzahost.com/',
   },
   {
     title: 'Portfolio Website',
@@ -17,11 +18,19 @@ const projects = [
     link: 'https://ayushkushwaha.vercel.app/',
   },
   {
+    title: 'MOVIX',
+    description: 'A movie search app using Redux.js, React.js, and SASS with dynamic features.',
+    image: '/assets/movix.png',
+    link: 'https://ayushmovix.vercel.app/',
+  },
+  
+  {
     title: 'RemoveQ',
     description: 'An innovative image optimization service enhancing website performance.',
     image: '/assets/removeq.png',
     link: 'https://removeq.com/',
   },
+ 
 ];
 
 export default function ProjectSlider() {
