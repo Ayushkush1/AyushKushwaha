@@ -263,7 +263,7 @@ export default function NewHomeBanner() {
                             />
 
                             {/* Dots pattern */}
-                            <div className="absolute -right-12 top-1/4">
+                            <div className="absolute  -right-12 top-1/4 hidden sm:block">
                                 <motion.div
                                     className="space-y-2 font-mono text-sm text-orange-500/70"
                                     animate={{

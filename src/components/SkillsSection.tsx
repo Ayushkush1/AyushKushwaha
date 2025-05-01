@@ -24,7 +24,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 relative h-screen">
+    <section ref={sectionRef} className="py-16 relative">
       {/* Header */}
       <div className="relative text-center mb-12">
         <h2 className="pb-1 text-4xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 bg-clip-text text-transparent">
