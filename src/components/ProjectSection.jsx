@@ -31,6 +31,7 @@ const projects = [
     link: 'https://removeq.com/',
   },
  
+ 
 ];
 
 export default function ProjectSlider() {
