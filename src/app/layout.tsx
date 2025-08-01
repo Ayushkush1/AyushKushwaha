@@ -22,24 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Tigsaw Smart Script */}
-        <script
-          id="tigsaw-script"
-          tigsaw-id="Z1K9PXPA"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(t,i,g,s,a,w){
-                i=t.currentScript.getAttribute("tigsaw-id");
-                (w||window).tigsawContainerId=i;
-                g=t.createElement('script');
-                g.src='https://static.tigsaw.com/delivery/smartscript.js';
-                g.defer=true;
-                t.head.appendChild(g);
-              })(document,typeof window!=='undefined'?window:this);
-            `,
-          }}
-        />
-        {/* End Tigsaw Smart Script */}
+        
+<!-- Tigsaw Script -->
+<script id="tigsaw-script" tigsaw-id="WZP3MYPQ">
+(function(t,i,g,s,a,w){
+  i=t.currentScript.getAttribute("tigsaw-id");
+  (w||window).tigsawContainerId=i;
+  g=t.createElement('script');
+  g.src='https://static.tigsaw.com/delivery/smartscript.js';
+  g.defer=true;
+  t.head.appendChild(g);
+})(document,typeof window!=='undefined'?window:this);
+</script>
+<!-- End Tigsaw Script -->
       </head>
       <body>
         <Header />
