@@ -25,7 +25,7 @@ export default function RootLayout({
         {/* Tigsaw Script */}
         <script
           id="tigsaw-script"
-          tigsaw-id="FB9I7BNW"
+          tigsaw-id="WZP3MYPQ"
           dangerouslySetInnerHTML={{
             __html: `
               (function(t,i,g,s,a,w){
