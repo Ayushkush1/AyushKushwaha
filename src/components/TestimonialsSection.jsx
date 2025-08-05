@@ -6,25 +6,32 @@ import { MessageSquare, Heart, Smile } from "lucide-react"
 
 const testimonials = [
   {
-    name: "John Doe",
-    position: "CEO at Company",
+    name: "Nitish Kumar",
+    position: "Founder at NinzaHost",
     quote:
-      "Ayush delivered exceptional work on our project. His attention to detail and problem-solving skills are remarkable.",
+      "Ayush transformed our vision into a stunning web hosting platform. His technical expertise and attention to detail made NinzaHost stand out in the competitive hosting market. The user experience he created is simply outstanding!",
     avatar: "",
     emoji: "🚀",
   },
   {
-    name: "Jane Smith",
-    position: "CTO at Company",
-    quote: "Ayush's team worked seamlessly, and the project exceeded our expectations. Highly recommended!",
-    emoji: "🔥",
+    name: "Nahar Singh",
+    position: "Founder at Erichost",
+    quote: "I'm thoroughly impressed with Ayush's designing creativity! He brought fresh ideas to our hosting platform and delivered beyond expectations. His creative approach to web design is exactly what Erichost needed.",
+    emoji: "🎨",
   },
   {
-    name: "John Doe",
-    position: "CEO at Company",
+    name: "Sarah Mitchell",
+    position: "E-commerce Business Owner",
     quote:
-      "Ayush delivered exceptional work on our project. His attention to detail and problem-solving skills are remarkable.",
-    emoji: "✨",
+      "Working with Ayush on my online store was a game-changer. His freelance work ethic is incredible - always responsive, professional, and delivers pixel-perfect results. My sales increased by 40% after the redesign!",
+    emoji: "💼",
+  },
+  {
+    name: "David Chen",
+    position: "Startup Founder",
+    quote:
+      "Ayush's freelance development skills are top-notch. He built our MVP from scratch and helped us secure our first round of funding. His code quality and project management skills are exceptional.",
+    emoji: "⚡",
   },
 ]
 
@@ -44,7 +51,7 @@ export default function Testimonials() {
 
   const handleSend = async () => {
     if (!message.trim()) return;
-    
+
     setIsSending(true);
     try {
       // Add new message to the list
@@ -54,7 +61,7 @@ export default function Testimonials() {
         quote: message,
         emoji: "💬"
       }]);
-      
+
       // Reset input after sending
       setMessage('');
     } finally {
@@ -64,13 +71,13 @@ export default function Testimonials() {
 
   return (
     <section className="py-16 relative" id="testimonials">
-      
+
       {/* Header */}
       <div className="relative text-center mb-16">
         <h2 className="text-4xl pb-2 font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600 bg-clip-text text-transparent">
-          What People Say <span className="inline-block animate-bounce">🗣️</span>
+          Real Client Reviews <span className="inline-block animate-bounce">🗣️</span>
         </h2>
-        <p className="text-lg text-gray-600">Hear what our happy customers have to say (they can't stop smiling! 😁)</p>
+        <p className="text-lg text-gray-600">Authentic feedback from satisfied clients who've experienced my work firsthand 🌟</p>
       </div>
 
       {/* Chat-style Testimonials */}
@@ -80,7 +87,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-between pb-4 border-b border-orange-200 mb-6">
             <div className="flex items-center gap-2">
               <MessageSquare className="text-orange-500" />
-              <span className="font-bold text-orange-600">HappyClient Chat</span>
+              <span className="font-bold text-orange-600">ClientFeedback Pro</span>
             </div>
             <div className="flex gap-2">
               <span className="h-3 w-3 bg-red-500 rounded-full"></span>
@@ -107,7 +114,7 @@ export default function Testimonials() {
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               className="flex-1 bg-orange-50 rounded-full px-4 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              placeholder="Share your experience with Ayush..."
+              placeholder="Share your experience working with Ayush..."
               disabled={isSending}
             />
             <button
@@ -178,10 +185,9 @@ function TestimonialMessage({ testimonial, index }) {
         {/* Message bubble */}
         <div
           className={`relative p-4 rounded-2xl shadow-md 
-            ${
-              isEven
-                ? "bg-white border-2 border-orange-200 text-gray-700 rounded-tl-none"
-                : "bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-tr-none"
+            ${isEven
+              ? "bg-white border-2 border-orange-200 text-gray-700 rounded-tl-none"
+              : "bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-tr-none"
             }`}
         >
           Quote
@@ -210,12 +216,11 @@ function TestimonialMessage({ testimonial, index }) {
                 key={reaction.emoji}
                 onClick={() => handleReaction(reaction.emoji)}
                 className={`px-2 py-1 rounded-full text-xs flex items-center gap-1 transition-all
-                  ${
-                    activeReaction === reaction.emoji
-                      ? "bg-orange-500 text-white scale-110"
-                      : isEven
-                        ? "bg-orange-100 text-orange-700 hover:bg-orange-200"
-                        : "bg-orange-600 text-white hover:bg-orange-700"
+                  ${activeReaction === reaction.emoji
+                    ? "bg-orange-500 text-white scale-110"
+                    : isEven
+                      ? "bg-orange-100 text-orange-700 hover:bg-orange-200"
+                      : "bg-orange-600 text-white hover:bg-orange-700"
                   }`}
               >
                 <span>{reaction.emoji}</span>
