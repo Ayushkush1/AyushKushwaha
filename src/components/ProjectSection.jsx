@@ -12,6 +12,13 @@ const projects = [
     link: 'https://six-table.vercel.app/',
   },
   {
+    title: 'Proposal Pro',
+    description: 'Manage all your proposals and invoices in one place with ease.',
+    image: '/assets/proposal-pro.png',
+    link: 'https://proposal-pro-sable.vercel.app/',
+  },
+ 
+  {
     title: 'NinzaHost',
     description: 'Reliable and affordable web hosting with cPanel, free SSL, and round-the-clock support.',
     image: '/assets/ninzahost.png',

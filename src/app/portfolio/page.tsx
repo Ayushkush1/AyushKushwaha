@@ -21,6 +21,18 @@ const projects: Project[] = [
     link: "https://ayushkushwaha.vercel.app/",
   },
   {
+    title: 'Six Table',
+    description: 'A creative agency specializing in modern web development solutions for businesses.',
+    image: '/assets/six-table.png',
+    link: 'https://six-table.vercel.app/',
+  },
+  {
+    title: 'Proposal Pro',
+    description: 'Manage all your proposals and invoices in one place with ease.',
+    image: '/assets/proposal-pro.png',
+    link: 'https://proposal-pro-sable.vercel.app/',
+  },
+  {
     title: 'NinzaHost',
     description: 'NinzaHost offers affordable web hosting with cPanel, free SSL, and 24/7 support.',
     image: '/assets/ninzahost.png',
