@@ -1,66 +1,54 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
-import { title } from 'process';
 
 const projects = [
-  {
-    title: 'Six Table',
-    description: 'A creative agency specializing in modern web development solutions for businesses.',
-    image: '/assets/six-table.png',
-    link: 'https://six-table.vercel.app/',
-  },
-  {
-    title: 'Proposal Pro',
-    description: 'Manage all your proposals and invoices in one place with ease.',
-    image: '/assets/proposal-pro.png',
-    link: 'https://proposal-pro-sable.vercel.app/',
-  },
- 
+
   {
     title: 'NinzaHost',
-    description: 'Reliable and affordable web hosting with cPanel, free SSL, and round-the-clock support.',
-    image: '/assets/ninzahost.png',
+    description: 'NinzaHost offers affordable web hosting with cPanel, free SSL, and 24/7 support.',
+    image: '/assets/ninzahost.png', 
     link: 'https://www.ninzahost.com/',
   },
   {
     title: 'Portfolio Website',
-    description: 'Showcasing my work and expertise through a sleek Next.js and Tailwind CSS portfolio.',
+    description: 'A personal portfolio built using Next.js and Tailwind CSS, showcasing my skills and projects.',
     image: '/assets/portfolio.png',
     link: 'https://ayushkushwaha.vercel.app/',
   },
   {
+    title: 'MOVIX',
+    description: 'A movie search app using Redux.js, React.js, and SASS with dynamic features.',
+    image: '/assets/movix.png',
+    link: 'https://ayushmovix.vercel.app/',
+  },
+  
+  {
     title: 'RemoveQ',
-    description: 'A service focused on optimizing images to boost website speed and performance.',
+    description: 'An innovative image optimization service enhancing website performance.',
     image: '/assets/removeq.png',
     link: 'https://removeq.com/',
   },
+ 
+ 
 ];
 
 export default function ProjectSlider() {
   const ref = useRef(null);
-  // Increased scroll height for smoother transitions
-  // Each project gets 120vh of scroll distance for smoother pacing
-  const scrollHeight = `${projects.length * 120}vh`;
+  // Increase the multiplier from 50 to 100 (or another value like 75, 80)
+  // This gives each project 100vh of scroll distance for its transition cycle.
+  const scrollHeight = `${projects.length * 100}vh`;
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end end'],
   });
 
-  // Progress bar for visual feedback
+  // Remove the headerOpacity transform as the header is now outside the sticky section
+  // const headerOpacity = useTransform(...) // No longer needed here
+
   const progressBarWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-
-  // Optional: Add smooth scrolling behavior
-  useEffect(() => {
-    // Ensure smooth scrolling is enabled
-    document.documentElement.style.scrollBehavior = 'smooth';
-
-    return () => {
-      document.documentElement.style.scrollBehavior = '';
-    };
-  }, []);
 
   return (
     <div> {/* Main container */}
@@ -78,12 +66,11 @@ export default function ProjectSlider() {
         <p className="text-lg text-gray-600 mt-2">From concept to code</p>
       </motion.div>
 
-      {/* Scrollable container with improved height for smoother transitions */}
+      {/* Scrollable container - now taller */}
       <div ref={ref} style={{ height: scrollHeight, position: 'relative' }}>
-       
-
         {/* Sticky section */}
         <section
+          // This section handles the overall centering
           className="sticky top-0 left-0 w-full h-screen flex flex-col justify-center items-center"
         >
           {/* Optional: Add Progress Bar back inside sticky section if desired */}
@@ -92,58 +79,37 @@ export default function ProjectSlider() {
           {/* Projects Container: Removed flex-grow, added specific height (e.g., h-[70vh]), adjusted width */}
           <div className="relative w-[90vw] sm:w-[95vw] md:max-w-[500px] lg:max-w-[1100px] h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[85vh] flex items-center justify-center"> {/* Responsive sizing for all breakpoints */}
             {projects.map((project, index) => {
-              // Improved transition ranges for smoother automatic scrolling
-              // Each project now has more controlled transition zones
-              const projectProgress = 1 / projects.length; // 0.25 for 4 projects
-              const start = index * projectProgress;
-              const end = (index + 1) * projectProgress;
+              // The animation ranges (start, end, start + 0.2, etc.) remain the same,
+              // but they now map to a larger physical scroll distance due to increased scrollHeight.
+              const start = index / projects.length;
+              const end = (index + 1) / projects.length;
+              const isFirst = index === 0;
+              const isLast = index === projects.length - 1;
 
-              // Transition zones: 30% for fade-in, 40% visible, 30% fade-out
-              const fadeInDuration = projectProgress * 0.3;
-              const visibleDuration = projectProgress * 0.4;
-              const fadeOutStart = start + fadeInDuration + visibleDuration;
+              // Conditional Opacity Transform
+              let opacityInputRange = [start, start + 0.2, end - 0.2, end];
+              let opacityOutputRange = [0, 1, 1, 0]; // Default fade in/out
 
-              // More precise opacity control for automatic transitions
-              let opacityInputRange, opacityOutputRange;
-
-              if (index === 0) {
-                // First project: starts visible, fades out
-                opacityInputRange = [start, fadeOutStart, end];
-                opacityOutputRange = [1, 1, 0];
-              } else if (index === projects.length - 1) {
-                // Last project: fades in, stays visible
-                opacityInputRange = [start, start + fadeInDuration, end];
-                opacityOutputRange = [0, 1, 1];
-              } else {
-                // Middle projects: complete fade in/out cycle
-                opacityInputRange = [start, start + fadeInDuration, fadeOutStart, end];
-                opacityOutputRange = [0, 1, 1, 0];
+              if (isFirst) {
+                // First card: Start visible, only fade out
+                opacityInputRange = [start, end - 0.2, end]; // Adjust input points
+                opacityOutputRange = [1, 1, 0];          // Start at 1, fade out
+              } else if (isLast) {
+                // Last card: Fade in, stay visible
+                opacityInputRange = [start, start + 0.2, end]; // Adjust input points
+                opacityOutputRange = [0, 1, 1];           // Fade in, stay at 1
               }
 
               const opacity = useTransform(scrollYProgress, opacityInputRange, opacityOutputRange);
 
-              // Smoother Y transform with reduced movement for less distraction
-              const yInputRange = [start, start + fadeInDuration];
-              const yOutputRange = index === 0 ? [0, 0] : [50, 0]; // Reduced from 100 to 50
+              // Conditional Y Transform for first card (optional: remove slide-in)
+              const yInputRange = isFirst ? [start, end] : [start, start + 0.2];
+              const yOutputRange = isFirst ? [0, 0] : [100, 0]; // Start at y=0 if first card
               const y = useTransform(scrollYProgress, yInputRange, yOutputRange);
 
-              // Refined scale transform for subtle emphasis
-              let scaleInputRange, scaleOutputRange;
-
-              if (index === 0) {
-                // First project: consistent scale, slight shrink at end
-                scaleInputRange = [start, fadeOutStart, end];
-                scaleOutputRange = [1, 1, 0.95];
-              } else if (index === projects.length - 1) {
-                // Last project: scale in, stay at full size
-                scaleInputRange = [start, start + fadeInDuration, end];
-                scaleOutputRange = [0.95, 1, 1];
-              } else {
-                // Middle projects: complete scale cycle
-                scaleInputRange = [start, start + fadeInDuration, fadeOutStart, end];
-                scaleOutputRange = [0.95, 1, 1, 0.95];
-              }
-
+              // Conditional Scale Transform for first card (optional: remove scale-in)
+              const scaleInputRange = isFirst ? [start, end - 0.2, end] : [start, start + 0.2, end - 0.2, end];
+              const scaleOutputRange = isFirst ? [1, 1, 0.9] : [0.9, 1, 1, 0.9]; // Start at scale=1 if first card
               const scale = useTransform(scrollYProgress, scaleInputRange, scaleOutputRange);
 
 
@@ -160,11 +126,14 @@ export default function ProjectSlider() {
                     width: '100%',
                     height: '100%',
                     zIndex: projects.length - index,
-                    cursor: 'pointer',
-                    transition: 'cursor 0.3s ease'
+                    cursor: opacity > 0.5 ? 'pointer' : 'default'
                   }}
                   className="overflow-hidden rounded-xl drop-shadow-2xl bg-gray-900/80"
-                  onClick={() => window.open(project.link, '_blank')}
+                  onClick={() => {
+                    if (opacity.get() > 0.5) {
+                      window.open(project.link, '_blank');
+                    }
+                  }}
                 >
                   {/* Image */}
                   <img
